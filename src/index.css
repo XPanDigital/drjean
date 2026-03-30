@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-deep-blue: #1E3A5F;
+  --color-primary-white: #FFFFFF;
+  --color-primary-light-gray: #F7F6F4;
+  
+  --color-secondary-medium-gray: #7A7A7A;
+  --color-secondary-silver: #E8E8E8;
+  --color-secondary-light-blue: #E8EEF5;
+  --color-secondary-soft-gold: #D4AF85;
+  
+  --color-support-deep-black: #0F0F0F;
+  --color-support-soft-green: #A8D5BA;
+
+  --font-display: "Cormorant Garamond", serif;
+  --font-body: "Lato", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-body text-support-deep-black bg-primary-white antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-primary-deep-blue;
+  }
+}
+
+@layer utilities {
+  .clip-arch {
+    clip-path: inset(0 0 0 0 round 50% 50% 0 0);
+  }
+  .clip-oval {
+    clip-path: ellipse(50% 50% at 50% 50%);
+  }
+  .vertical-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+  .text-outline {
+    -webkit-text-stroke: 1px var(--color-primary-deep-blue);
+    color: transparent;
+  }
+  .text-outline-white {
+    -webkit-text-stroke: 1px var(--color-primary-white);
+    color: transparent;
+  }
+}
+
